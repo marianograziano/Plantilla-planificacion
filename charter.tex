@@ -1,17 +1,17 @@
 \documentclass[11pt]{charter}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Punto de cobro sin contacto para uso temporal de equipos.} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
-%\posgrado{Carrera de Especialización en Internet de las Cosas} 
+%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Intelegencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Mariano Graziano} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Nombre del Director}
@@ -32,9 +32,9 @@
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{22 de junio de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlanificacion{22 de Agosto de 2020} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{22 de diciembre de 2020}		%Fecha de defensa pública del trabajo final
+\fechaINICIO{25 de Agosto de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlanificacion{13 de Octubre de 2020} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{XX de Junio de 2021}		%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -62,12 +62,12 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-1.0      & Creación del documento                                          & 27/06/2020 \\ \hline
-1.1      &                                                                 & dd/mm/aaaa \\ \hline
-1.2      & Otro ejemplo \newline
-		   Con texto partido \newline
-		   En varias líneas \newline
-		   A propósito                                                     & dd/mm/aaaa \\ \hline
+1.0      & Creación del documento y redaccion de puntos 1,2,3,4 y 6  & 06/09/2020 \\ \hline
+%1.1      &                                                                 %& dd/mm/aaaa \\ \hline
+%1.2      & Otro ejemplo \newline
+%		   Con texto partido \newline
+%		   En varias líneas \newline
+%		   A propósito                                                     %& dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un sistema de control de temperatura de un calefón, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo de un dispositivo de cobro para el uso de equipamiento electronico, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -107,55 +107,54 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red}
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+El presente proyecto expresa el desafío de compatibilizar y articular todos los contenidos curriculares de la especialización con servicios de pago disponibles en el pais. 
+El objetivo es crear un dispositivo que facilite al usuario de lavarropas comunitarios, una experiencia de pago sin fricciones. 
+
+En la actualidad este tipo de equipamientos instalados en edificios o barrios cerrados, utilizan la modalidad de compra de fichas o monedas para habilitar el uso del mismo por un tiempo determinado. 
+Las fichas insertan en un dispositivo-temporizador que reconoce el valor de las mismas y al cubrir un monto preestablecido habilita el uso del equipamiento por un tiempo determinado. 
+
+Este equipamiento se administra de manera desatendida lo cual tiene las siguientes implicancias: 
 
 \begin{itemize}
-\item ¿Cómo se vincula este proyecto con la misión de la organización?
-\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-\item ¿Cuales son las necesidades que debe satisfacer?
-\item ¿Por dónde pasa la innovación?
+\item Cada uno de los dispositivos debe configurarse de modo presencial y periódicamente debe vaciarse el cofre de recaudación.
+
+\item No hay forma remota de saber si el electrodomestico esta siendo usado por otro vecino.
+\item Las fichas deben adquirirse en los kioskos de cercanía, que suelen desabastecerse casi inmediatamente en cuanto el proveedor las suministra.
 \end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+Una de las principales motivaciones para llevar adelante este proyecto se produce en el contexto de la pandemia de SARS-COV-2. El aislamiento social y preventivo que está requiere, pone de manifiesto la obsolescencia de la practica en algo tan esencial como el lavado de ropa, de ir hasta comercios específicos y manipular dinero en efectivo.  
 
+El presente proyecto se destaca por re definiry agilizar este proceso de pago enfocado en la experiencia del cliente. 
+Como se puede ver en la Fig. 2. Se reemplaza la utilización de fichas y toda la logística que esto implica por una aplicacion movil o un medio RFID.
+
+El usuario del equipo podra cargarle saldo por un medio de pago online (gateway de pago o transferencia PEI) u offline (corresponsalías extrabancarias como Rapipago o Pago Facil).
+
+El dispositivo estará instalado próximo al equipo a utilizar y administrará el uso de la energía eléctrica del equipo.
+
+Al querer utilizar el equipamiento, el usuario acerca su medio de pago al dispositivo el cual validara contra un servicio remoto que el medio de pago tenga saldo y el costo y plazo definido para ese dispositivo.
+
+Se inicia una cuenta regresiva por el lapso contratado en la pantalla del dispositivo y la misma se replica en la aplicación multiplataforma del usuario. El dispositivo contará con un teclado numérico como interface de troubleshooting o uso alternativo a la tarjeta. 
+
+
+Como complemento al desarrollo del dispositivo la innovación en este proyecto pasará por investigar la factibilidad técnica y económica de implementar en un proyecto de este tipo la la tecnología distribuida y potencial protocolo IOTA como medio de intercambio de información entre los distintos dispositivos intervinientes.
 \vspace{25px}
-
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=.7\textwidth]{./Figuras/diagBloques.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
-
 \vspace{25px}
 
-El tamaño de la tipografía en la figura debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama.
-\end{consigna}
 
+\newpage 
+\newpage 
 
 \section{Identificación y análisis de los interesados}
 \label{sec:interesados}
 
 \begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
-
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
@@ -163,112 +162,101 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Auspiciante   &         -          &           -   	&     -   	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+%Equipo        & miembro1 \newline 
+%				miembro2          &              	&        	\\ \hline
+%Opositores    &                   &              	&        	\\ \hline
+Usuario final & Habitantes de complejos con area de Lavarropas Compartido                   & -             	&     -   	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Sería deseable listar a continuación de la tabla las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-\item Orientador: María Gómez, nos va a poder ayudar mucho con la gestión de impuestos.
-\end{itemize}
 
 \end{consigna}
 
-
+\newpage 
 
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+ Este proyecto tiene tres propositos: 
+ 
+ \begin{itemize}
+\item El principal es digitalizar el medio de pago en servicios que aun utilizan fichas o cospeles.
+\item En segundo lugar adquirir los conocimientos propios del ciclo de vida de un proyecto de IOT con servicios basados en la nube e integración con APIs desde su planificación hasta su ejecución.
+\item Por ultimo es desarrollar y documentar en un contexto académico el análisis y potencial de la tecnología distribuida IOTA.
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+\end{itemize}
+ 
+  
 
 \section{2. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
-
-
+El presente proyecto incluye: 
+\begin{itemize}
+		\item Diseño y armado de un dispositivo de cobro sin contacto.  
+		\item Diseño y desarrollo de aplicación multiplataforma tanto para usuarios como para administradores del sistema. 
+		\item Diseño de API para disponibilizar el acceso a terceros.
+		\item Investigación sobre tecnologia IOTA y su impacto un proyecto de este estilo.
+\end{itemize}		
+ El presente proyecto no incluye:
+\begin{itemize}	
+		\item La integración con Plataformas de administradores de consorcios.
+		\item La integración con entornos productivos de gateways de pago o Banca Online. 		
+\end{itemize}		 
 \section{3. Supuestos del proyecto}
 \label{sec:supuestos}
-
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
-
+Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
-\item Supuesto 1
-\item Supuesto 2...
+\item Se podrá acceder a entornos sandbox de gateways de pago y banca online.
+\item Todo el hardware necesario podra adquirirse en el país.
+\item Dentro de los contenidos curriculares de la carrera es factible que se incluyan contenidos que permitan cubrir algunos de los requerimientos de manera mas eficiente a la propuesta en este documento. Los mismos se aplicaran en tanto el beneficio lo amerite y se pueda implementar la en mejora dentro de los plazos estipulados en el Acta de Constitución de este documento. 
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{4. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible agruparlos por afinidad:
-
 \begin{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Requerimientos funcionales del dispositivo:
 	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2
-	\item Requerimiento 3 (prioridad menor)
+\item El punto de cobro debe estar conectado por uno o más medios a  internet de manera estable.
+\item Si en el lugar físico (nodo de Punto de Cobros) hay más de un dispositivo uno de estos puede ser el gateway hacia internet de los restantes (prioridad baja) 
+\item En caso de un fallo en la conexión debe poder garantizar al usuario el uso del lavarropas (cobro offline o lavado gratuito por desconexión)
+\item El usuario debe poder pagar con un medio RFID o su teléfono celular sin tener contacto físico con el dispositivo y con la menor interacción posible.
+\item En caso de corte de suministro eléctrico debe poder reiniciarse y volver al estado inmediato anterior al corte.
+\item Deberá mostrar en la pantalla el estado del dispositivo y en caso de estar ocupado el tiempo restante.
+\item Deberá contar con un teclado numérico como alternativa a usuarios que no quieran utilizar un medio electrónico de contacto y/o como interfaz de control en sitio asumiendo que es la única manera de tomar control del dispositivo.
+\item Un dispositivo debe poder administrar más de un lavarropas (prioridad menor).
+\item En caso de ser factible se deben poder usar medios rfid compatibles con los sistemas de control de accesos actuales.(prioridad menor)
+\end{enumerate}
+\item Requerimientos funcionales de la aplicación multiplataforma para el administrador del sistema punto de cobro:
+	\begin{enumerate} 
+\item Deberá poder gestionar la creación de nodos y la asignación de dispositivos a cada nodo. 
+\item Deberá poder asignar usuarios administradores de nodos a un nodo y sus dispositivos.
 	\end{enumerate}
-\item Grupo de requerimientos asociados con...
-	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2 (prioridad menor)
+\item Requerimientos funcionales de la aplicación multiplataforma para el administrador del nodo de lavarropas:
+	\begin{enumerate} 
+\item Deberá poder gestionar el costo y plazo de los lavarropas que están conectados a lavarropas.
+\item Deberá poder gestionar el alta masiva y la forma de validación de los usuarios del nodo.
+\item Deberá poder definir descuentos / promociones en función del nivel de usuario.
+\item Deberá contar con un dashboard con el estado y niveles de uso.
+\item Deberá poder definir los medios de cobro y de pago asociados al nodo. 
+	\end{enumerate}
+\item Requerimientos funcionales de la aplicación multiplataforma para el usuario final: 
+\begin{enumerate} 
+\item Deberá poder cargar saldo a su cuenta  con los medios de pagos habilitados.
+\item Deberá poder gestionar los medios RFID asociados a su cuenta. 
+\item Deberá poder ver la disponibilidad de los equipos a los que tiene acceso. 
+\item Deberá poder transferir saldo a un tercero o a una tarjeta.
+	\end{enumerate}
+\item Requerimientos No funcionales.
+\begin{enumerate}
+\item Se debe loguear toda la informacion relevante a los fines de diagnosticar posibles problemas y/o mejoras al sistema.
+\item Toda la información sensible del usuario debe almacenarse y transferirse de manera segura.
 	\end{enumerate}
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-De ser posible indicar cómo se obtuvieron cada uno de los requerimientos 
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-\item Ser breve y conciso (nadie lee cosas largas). 
-\item Ser específico: no dejar lugar a confusiones.
-\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
@@ -280,53 +268,53 @@ Descripción: En esta sección se deben incluir las historias de usuarios y su p
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-Cosas como: 
 \begin{itemize}
-\item Manual de uso
-\item Diagrama esquemático
-\item Código fuente
-\item Diagrama de instalación
-\item Informe final
+\item Prototipo funcional del dispositivo y de la aplicación a desarrollar.
+\item Documento  de Viabilidad Económica Financiera.
+\item Documento de Viabilidad Técnica / Funcional de la implementación de una red IOTA  en este proyecto.
+\item Diagrama esquemático del sistema.
+\item Manual de uso de la aplicación.
+\item Informe de avance. 
+\item Memoria del proyecto. 
+\item Presentación ante el jurado.
 
 \end{itemize}
 
-\end{consigna}
 
 \section{6. Desglose del trabajo en tareas}
 \label{sec:wbs}
-
 \begin{consigna}{red}
-Se recomienda mostrar el WBS mediante una lista indexada:
-
+ En desarrollo.
+ \end{consigna}
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Tareas Preliminares
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Planificación del Proyecto (30 hs)
+	\item Análisis de Componentes del Dispositivo IOT ( 30 hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+	\item Analisis de protocolos de comunicacion (30 hs)
+\item Diseño del Sistema
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Diseño de Base de Datos (tantas hs)
+	\item Diseño de Servicios a Consumir (tantas hs)
+	\item 
 	\end{enumerate}
-	\item Grupo de tareas 3
+\item Desarrollo de la aplicación
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
+	\item Desarrollo  de FrontEnd Usuarios  (tantas hs)
+	\item Desarrollo de FrontEnd Administradores (tantas hs)
+	\item Integración con Servicios en Nube (tantas hs)
+	\end{enumerate}
+\item Desarrollo de la aplicacion IOT
+	\begin{enumerate}
+	\item Desarrollo de Modulo de Lectura RFID
+	\item Desarrollo de Layout de Pantalla
 	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
 	\end{enumerate}
 \end{enumerate}
 
 Cantidad total de horas: (tantas hs)
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-
-\end{consigna}
 
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
