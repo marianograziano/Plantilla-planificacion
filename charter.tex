@@ -1,7 +1,7 @@
 \documentclass[11pt]{charter}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Punto de cobro sin contacto para uso temporal de equipos.} 
+\titulo{Punto de cobro sin contacto para uso temporal de equipos} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -14,15 +14,15 @@
 \autor{Mariano Graziano} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Santiago Salamandri}
+\pertenenciaDirector{UBA - UNC} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{} % si queda vacio no se deberíá incluir 
 \pertenenciaCoDirector{}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Alfonso Alvarez}
+\empresaCliente{Cliente}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -34,7 +34,7 @@
  
 \fechaINICIO{25 de Agosto de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlanificacion{13 de Octubre de 2020} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{XX de Junio de 2021}		%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{14 de Junio de 2021}		%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -62,8 +62,8 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-1.0      & Creación del documento y redaccion de puntos 1,2,3,4 y 6  & 06/09/2020 \\ \hline
-%1.1      &                                                                 %& dd/mm/aaaa \\ \hline
+1.0      & Creación del documento y redacción de puntos 1,2,3,4 y 6  & 06/09/2020 \\ \hline
+1.1      & Corrección de observaciones recibidas y adhesión de historias de usuarios                                                                 & 15/09/2020 \\ \hline
 %1.2      & Otro ejemplo \newline
 %		   Con texto partido \newline
 %		   En varias líneas \newline
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo de un dispositivo de cobro para el uso de equipamiento electronico, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño y creación de un dispositivo que se integre con distintos medios pagos para hacer uso de equipos electrónicos por lapsos predefinidos de tiempo, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -94,7 +94,7 @@ Se adjunta a esta acta la planificación inicial.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename  \end{tabular} \vspace{2.5cm} \\ 
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 %\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
 %\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
@@ -108,36 +108,37 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-El presente proyecto expresa el desafío de compatibilizar y articular todos los contenidos curriculares de la especialización con servicios de pago disponibles en el pais. 
-El objetivo es crear un dispositivo que facilite al usuario de lavarropas comunitarios, una experiencia de pago sin fricciones. 
+En la actualidad distintos tipos de equipamiento de uso compartido como televisores en centros de salud, lavarropas en edificios o barrios cerrados o sistemas de iluminación en complejos deportivos,  entre otros, utilizan la modalidad de compra de fichas o monedas para habilitar el uso del equipo en cuestión por un tiempo determinado.
 
-En la actualidad este tipo de equipamientos instalados en edificios o barrios cerrados, utilizan la modalidad de compra de fichas o monedas para habilitar el uso del mismo por un tiempo determinado. 
-Las fichas insertan en un dispositivo-temporizador que reconoce el valor de las mismas y al cubrir un monto preestablecido habilita el uso del equipamiento por un tiempo determinado. 
 
-Este equipamiento se administra de manera desatendida lo cual tiene las siguientes implicancias: 
+Las fichas se insertan en un dispositivo-temporizador que reconoce el valor de las mismas y al cubrir un monto preestablecido habilita el uso del equipamiento por un tiempo determinado. 
+
+Este equipamiento se administra de manera desatendida lo cual tiene las siguientes: 
 
 \begin{itemize}
 \item Cada uno de los dispositivos debe configurarse de modo presencial y periódicamente debe vaciarse el cofre de recaudación.
 
-\item No hay forma remota de saber si el electrodomestico esta siendo usado por otro vecino.
+\item No hay forma remota de saber si el electrodoméstico esta siendo usado por otro vecino.
 \item Las fichas deben adquirirse en los kioskos de cercanía, que suelen desabastecerse casi inmediatamente en cuanto el proveedor las suministra.
 \end{itemize}
 
-Una de las principales motivaciones para llevar adelante este proyecto se produce en el contexto de la pandemia de SARS-COV-2. El aislamiento social y preventivo que está requiere, pone de manifiesto la obsolescencia de la practica en algo tan esencial como el lavado de ropa, de ir hasta comercios específicos y manipular dinero en efectivo.  
 
-El presente proyecto se destaca por re definiry agilizar este proceso de pago enfocado en la experiencia del cliente. 
-Como se puede ver en la Fig. 2. Se reemplaza la utilización de fichas y toda la logística que esto implica por una aplicacion movil o un medio RFID.
+El presente proyecto expresa el desafío de compatibilizar y articular todos los contenidos curriculares de la especialización con servicios de pago disponibles en el país con el fin de crear un dispositivo que permita al usuario de lavarropas comunitarios tener distintas alternativas digitales al pagar y no depender de la disponibilidad de cospeles en un comercio de cercanía. 
+ 
 
-El usuario del equipo podra cargarle saldo por un medio de pago online (gateway de pago o transferencia PEI) u offline (corresponsalías extrabancarias como Rapipago o Pago Facil).
+Una de las principales motivaciones para llevar adelante este proyecto se produce en el contexto de la pandemia de SARS-COV-2. El aislamiento social y preventivo que está requiere, pone de manifiesto la obsolescencia de la practica actual en algo tan esencial como el lavado de ropa, de ir hasta comercios específicos y manipular dinero en efectivo.  
+
+Como se puede ver en la Fig. 2, se reemplaza la utilización de fichas y toda la logística que esto implica por una aplicación móvil o un medio RFID.
+
+El usuario del equipo podra cargarle saldo por un medio de pago online (gateway de pago o transferencia PEI) u offline (corresponsalías extrabancarias como Rapipago o Pago Fácil).
 
 El dispositivo estará instalado próximo al equipo a utilizar y administrará el uso de la energía eléctrica del equipo.
 
-Al querer utilizar el equipamiento, el usuario acerca su medio de pago al dispositivo el cual validara contra un servicio remoto que el medio de pago tenga saldo y el costo y plazo definido para ese dispositivo.
+Al querer utilizar el equipamiento, el usuario acerca su medio de pago al dispositivo el cual validará contra un servicio remoto que el medio de pago tenga saldo y el costo y plazo definido para ese dispositivo.
 
-Se inicia una cuenta regresiva por el lapso contratado en la pantalla del dispositivo y la misma se replica en la aplicación multiplataforma del usuario. El dispositivo contará con un teclado numérico como interface de troubleshooting o uso alternativo a la tarjeta. 
+Se inicia una cuenta regresiva por el plazo contratado en la pantalla del dispositivo y la misma se replica en la aplicación multiplataforma del usuario. El dispositivo contará con un teclado numérico como interface de troubleshooting o uso alternativo a la tarjeta. 
 
-
-Como complemento al desarrollo del dispositivo la innovación en este proyecto pasará por investigar la factibilidad técnica y económica de implementar en un proyecto de este tipo la la tecnología distribuida y potencial protocolo IOTA como medio de intercambio de información entre los distintos dispositivos intervinientes.
+Como complemento al desarrollo del dispositivo la innovación en este proyecto pasará por investigar la factibilidad técnica y económica de implementar en un proyecto de este tipo la tecnología distribuida y potencial protocolo IOTA como medio de intercambio de información entre los distintos dispositivos intervinientes.
 \vspace{25px}
 \begin{figure}[htpb]
 \centering 
@@ -162,13 +163,13 @@ Como complemento al desarrollo del dispositivo la innovación en este proyecto p
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &         -          &           -   	&     -   	\\ \hline
+Cliente   &\clientename   &           -   	&     -   	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
 %Equipo        & miembro1 \newline 
 %				miembro2          &              	&        	\\ \hline
 %Opositores    &                   &              	&        	\\ \hline
-Usuario final & Habitantes de complejos con area de Lavarropas Compartido                   & -             	&     -   	\\ \hline
+Usuario final & Habitantes de complejos con área de lavarropas compartido & -             	&     -   	\\ \hline
 \end{tabularx}
 \end{table}
 
@@ -180,12 +181,12 @@ Usuario final & Habitantes de complejos con area de Lavarropas Compartido       
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 
- Este proyecto tiene tres propositos: 
+ Este proyecto tiene tres propósitos: 
  
  \begin{itemize}
 \item El principal es digitalizar el medio de pago en servicios que aun utilizan fichas o cospeles.
 \item En segundo lugar adquirir los conocimientos propios del ciclo de vida de un proyecto de IOT con servicios basados en la nube e integración con APIs desde su planificación hasta su ejecución.
-\item Por ultimo es desarrollar y documentar en un contexto académico el análisis y potencial de la tecnología distribuida IOTA.
+\item Por último es desarrollar y documentar en un contexto académico el análisis y potencial de la tecnología distribuida IOTA.
 
 \end{itemize}
  
@@ -199,20 +200,20 @@ El presente proyecto incluye:
 		\item Diseño y armado de un dispositivo de cobro sin contacto.  
 		\item Diseño y desarrollo de aplicación multiplataforma tanto para usuarios como para administradores del sistema. 
 		\item Diseño de API para disponibilizar el acceso a terceros.
-		\item Investigación sobre tecnologia IOTA y su impacto un proyecto de este estilo.
+		\item Investigación sobre tecnología IOTA y su impacto un proyecto de este estilo.
 \end{itemize}		
  El presente proyecto no incluye:
 \begin{itemize}	
 		\item La integración con Plataformas de administradores de consorcios.
-		\item La integración con entornos productivos de gateways de pago o Banca Online. 		
+		\item La integración con entornos productivos de gateways de pago o banca online. 		
 \end{itemize}		 
 \section{3. Supuestos del proyecto}
 \label{sec:supuestos}
 Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
 \item Se podrá acceder a entornos sandbox de gateways de pago y banca online.
-\item Todo el hardware necesario podra adquirirse en el país.
-\item Dentro de los contenidos curriculares de la carrera es factible que se incluyan contenidos que permitan cubrir algunos de los requerimientos de manera mas eficiente a la propuesta en este documento. Los mismos se aplicaran en tanto el beneficio lo amerite y se pueda implementar la en mejora dentro de los plazos estipulados en el Acta de Constitución de este documento. 
+\item Todo el hardware necesario podrá adquirirse en el país.
+\item Dentro de los contenidos curriculares de la carrera es factible que se incluyan contenidos que permitan cubrir algunos de los requerimientos de manera mas eficiente a la propuesta en este documento. Los mismos se aplicarán en tanto el beneficio lo amerite y se pueda implementar la  mejora dentro de los plazos estipulados en el Acta de Constitución de este documento. 
 \end{itemize}
 
 \section{4. Requerimientos}
@@ -221,15 +222,15 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{enumerate}
 \item Requerimientos funcionales del dispositivo:
 	\begin{enumerate}
-\item El punto de cobro debe estar conectado por uno o más medios a  internet de manera estable.
-\item Si en el lugar físico (nodo de Punto de Cobros) hay más de un dispositivo uno de estos puede ser el gateway hacia internet de los restantes (prioridad baja) 
+\item El punto de cobro debe estar conectado por uno o más medios a  Internet de manera estable.
+\item Si en el lugar físico (nodo de Punto de Cobros) hay más de un dispositivo uno de estos puede ser el gateway hacia Internet de los restantes (prioridad baja) 
 \item En caso de un fallo en la conexión debe poder garantizar al usuario el uso del lavarropas (cobro offline o lavado gratuito por desconexión)
 \item El usuario debe poder pagar con un medio RFID o su teléfono celular sin tener contacto físico con el dispositivo y con la menor interacción posible.
 \item En caso de corte de suministro eléctrico debe poder reiniciarse y volver al estado inmediato anterior al corte.
 \item Deberá mostrar en la pantalla el estado del dispositivo y en caso de estar ocupado el tiempo restante.
 \item Deberá contar con un teclado numérico como alternativa a usuarios que no quieran utilizar un medio electrónico de contacto y/o como interfaz de control en sitio asumiendo que es la única manera de tomar control del dispositivo.
 \item Un dispositivo debe poder administrar más de un lavarropas (prioridad menor).
-\item En caso de ser factible se deben poder usar medios rfid compatibles con los sistemas de control de accesos actuales.(prioridad menor)
+\item En caso de ser factible se deben poder usar medios RFID compatibles con los sistemas de control de accesos actuales.(prioridad menor)
 \end{enumerate}
 \item Requerimientos funcionales de la aplicación multiplataforma para el administrador del sistema punto de cobro:
 	\begin{enumerate} 
@@ -238,7 +239,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\end{enumerate}
 \item Requerimientos funcionales de la aplicación multiplataforma para el administrador del nodo de lavarropas:
 	\begin{enumerate} 
-\item Deberá poder gestionar el costo y plazo de los lavarropas que están conectados a lavarropas.
+\item Deberá poder gestionar el costo y plazo de los lavarropas que están conectados a lavarropas.0
 \item Deberá poder gestionar el alta masiva y la forma de validación de los usuarios del nodo.
 \item Deberá poder definir descuentos / promociones en función del nivel de usuario.
 \item Deberá contar con un dashboard con el estado y niveles de uso.
@@ -251,27 +252,64 @@ Para el desarrollo del presente proyecto se supone que:
 \item Deberá poder ver la disponibilidad de los equipos a los que tiene acceso. 
 \item Deberá poder transferir saldo a un tercero o a una tarjeta.
 	\end{enumerate}
-\item Requerimientos No funcionales.
+\item Requerimientos no funcionales.
 \begin{enumerate}
-\item Se debe loguear toda la informacion relevante a los fines de diagnosticar posibles problemas y/o mejoras al sistema.
-\item Toda la información sensible del usuario debe almacenarse y transferirse de manera segura.
+\item Se debe loguear toda la información relevante a los fines de diagnosticar posibles problemas y/o mejoras al sistema.
+\item Toda la información sensible del usuario debe almacenarse y transferirse de manera segura acorde a los estándares de seguridad de la industria. 
 	\end{enumerate}
 \end{enumerate}
 
 \section{Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-\end{consigna}
+A continuación se listan las historias de usuario identificadas para el proyecto. Se agrega una ponderación (columna "Pond.") que describe el nivel del esfuerzo que se estima tenga la historia y una Prioridad (columna "Pri.") que hace referencia a la prioridad de 1 a 5, siendo 5 lo mas prioritario.
 
+
+\begin{table}[]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllllc}
+\hline
+\rowcolor[HTML]{FFFC9E} 
+Nro                      & " .. Como... "                           & "... quiero ..."                                                                                                                                                          & "... para que pueda ..."                                                                                                                       & Pond.                      & Pri.                   \\ \hline
+\multicolumn{1}{|l|}{1}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{Saber como funciona el servicio}                                                                                                                & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Entender que tengo que hacer para \\ usar el servicio.\end{tabular}}                      & \multicolumn{1}{l|}{Baja}  & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{2}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{Darme de alta en el servicio.}                                                                                                                  & \multicolumn{1}{l|}{Comprar créditos para utilizar el servicio.}                                                                         & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{5} \\ \hline
+\multicolumn{1}{|l|}{3}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Comprar créditos por medio de tarjeta de \\ crédito / tarjeta de débito / \\ efectivo o transferencia.\end{tabular}} & \multicolumn{1}{l|}{Utilizar el servicio.}                                                                                               & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{5} \\ \hline
+\multicolumn{1}{|l|}{4}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Que el costo del lavado \\ se acredite en las expensas.\end{tabular}}                                                & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}No tener que andar preocupándome\\ por cargar saldo previamente.\end{tabular}}            & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{5}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{Pagar el servicio con un teléfono Android.}                                                                                                     & \multicolumn{1}{l|}{Utilizar el servicio.}                                                                                               & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{5} \\ \hline
+\multicolumn{1}{|l|}{6}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{Pagar el servicio con un teléfono IOS.}                                                                                                         & \multicolumn{1}{l|}{Utilizar el servicio.}                                                                                               & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{7}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{Pagar el servicio con una tarjeta RFID.}                                                                                                        & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Utilizar el servicio sin tener\\ que usar el teléfono,\end{tabular}}                      & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{5} \\ \hline
+\multicolumn{1}{|l|}{8}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Generar un acceso temporal a la cuenta\\ desde el dispositivo.\end{tabular}}                                         & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Para usar el servicio sin tener\\ que usar el teléfono  o un medio RFID\end{tabular}}     & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{4} \\ \hline
+\multicolumn{1}{|l|}{9}  & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Asociar otros medios RFID / teléfonos \\ de allegados.\end{tabular}}                                                 & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Compartir la cuenta y el medio de \\ pago con otros miembros de la familia.\end{tabular}} & \multicolumn{1}{l|}{Baja}  & \multicolumn{1}{c|}{2} \\ \hline
+\multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Des asociar medio RFID / teléfono \\ celular por extravío\end{tabular}}                                              & \multicolumn{1}{l|}{Resguardar el saldo en caso de perdida.}                                                                             & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{11} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Poder usar el servicio si el sistema \\ ante un problema de la terminal.\end{tabular}}                               & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}No resultar damnificado por un \\ problema ajeno a mi.\end{tabular}}                      & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{4} \\ \hline
+\multicolumn{1}{|l|}{12} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Saber cuanto tiempo falta para que \\ se libere algún equipo del nodo\end{tabular}}                                  & \multicolumn{1}{l|}{No ir hasta el nodo innecesariamente.}                                                                               & \multicolumn{1}{l|}{Baja}  & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{13} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Saber cuanto tiempo falta para que\\  termine el servicio contratado\end{tabular}}                                   & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Saber si puedo ir a retirar la ropa sin tener\\  que ir hasta el lugar.\end{tabular}}     & \multicolumn{1}{l|}{Baja}  & \multicolumn{1}{c|}{5} \\ \hline
+\multicolumn{1}{|l|}{14} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Poder gestionar las notificaciones \\ del sistema.\end{tabular}}                                                     & \multicolumn{1}{l|}{Recibir las notificaciones que quiero.}                                                                              & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{15} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{Ver estadísticas de uso de mi cuenta}                                                                                                           & \multicolumn{1}{l|}{Saber mi historial de uso y cargas}                                                                                  & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{16} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Descargar el comprobante\\  de crédito comprado\end{tabular}}                                                        & \multicolumn{1}{l|}{Tener la factura del gasto realizado}                                                                                & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{4} \\ \hline
+\multicolumn{1}{|l|}{17} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Recomendar a potenciales \\ usuarios / nodos.\end{tabular}}                                                          & \multicolumn{1}{l|}{Recibir beneficios por la recomendación.}                                                                            & \multicolumn{1}{l|}{Baja}  & \multicolumn{1}{c|}{2} \\ \hline
+\multicolumn{1}{|l|}{18} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Quiero devolver crédito \\ comprado por error.\end{tabular}}                                                         & \multicolumn{1}{l|}{Recuperar dinero.}                                                                                                   & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{4} \\ \hline
+\multicolumn{1}{|l|}{19} & \multicolumn{1}{l|}{Usuario}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Cambiar contraseña y datos \\ personales de aplicación\end{tabular}}                                                 & \multicolumn{1}{l|}{Administrar la seguridad de su cuenta}                                                                               & \multicolumn{1}{l|}{Baja}  & \multicolumn{1}{c|}{4} \\ \hline
+\multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{Operador}   & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Gestionar altas y bajas de nodos y \\ dispositivos en cada nodo.\end{tabular}}                                       & \multicolumn{1}{l|}{Asignar equipos a un edificio.}                                                                                      & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{21} & \multicolumn{1}{l|}{Operador}   & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Monitorear logs de los puntos \\ de cobro en un nodo.\end{tabular}}                                                  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Verificar el correcto \\ funcionamiento del dispositivo\end{tabular}}                     & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{4} \\ \hline
+\multicolumn{1}{|l|}{22} & \multicolumn{1}{l|}{Operador}   & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Monitorear conectividad de los puntos\\ de cada nodo.\end{tabular}}                                                  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Verificar el correcto\\ funcionamiento del dispositivo\end{tabular}}                      & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{23} & \multicolumn{1}{l|}{Operador}   & \multicolumn{1}{l|}{Parametrizar de Alertas y Notificaciones.}                                                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Tomar conocimiento \\ de eventos a priorizar.\end{tabular}}                               & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{4} \\ \hline
+\multicolumn{1}{|l|}{24} & \multicolumn{1}{l|}{Comerc.}    & \multicolumn{1}{l|}{Definir política de precios – descuentos.}                                                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Incentivar el uso de uno \\ u otro medio de pago.\end{tabular}}                           & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{25} & \multicolumn{1}{l|}{Comerc.}    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Visualizar cantidad de ventas \\ por dispositivo y/o nodo.\end{tabular}}                                             & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Hacer seguimiento \\ de ventas y rentabilidad\end{tabular}}                               & \multicolumn{1}{l|}{Alta}  & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{26} & \multicolumn{1}{l|}{Finanzas}   & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Verificar saldo circulante en \\ cuentas de usuarios.\end{tabular}}                                                  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Comparar contra el \\ existente en cuentas virtuales\end{tabular}}                        & \multicolumn{1}{l|}{Baja}  & \multicolumn{1}{c|}{3} \\ \hline
+\multicolumn{1}{|l|}{27} & \multicolumn{1}{l|}{Seg. Info.} & \multicolumn{1}{l|}{Dar de alta usuarios al sistema de gestion}                                                                                                     & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Permitir que los usuarios \\ puedan acceder al sistema\end{tabular}}                      & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{5} \\ \hline
+\multicolumn{1}{|l|}{29} & \multicolumn{1}{l|}{Seg. Info.} & \multicolumn{1}{l|}{Asignar roles a un usuario}                                                                                                                     & \multicolumn{1}{l|}{Separar funciones entre los usuarios.}                                                                               & \multicolumn{1}{l|}{Media} & \multicolumn{1}{c|}{5} \\ \hline
+\multicolumn{1}{|l|}{30} & \multicolumn{1}{l|}{Seg. Info.} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Dar de alta medios RFID que se pueden \\ usar en la plataforma.\end{tabular}}                                        & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Que los usuarios puedan \\ dar de alta solo los medios habilitados.\end{tabular}}         & \multicolumn{1}{l|}{Baja}  & \multicolumn{1}{c|}{4} \\ \hline
+\end{tabular}%
+}
+\end{table}
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
 
 \begin{itemize}
 \item Prototipo funcional del dispositivo y de la aplicación a desarrollar.
-\item Documento  de Viabilidad Económica Financiera.
-\item Documento de Viabilidad Técnica / Funcional de la implementación de una red IOTA  en este proyecto.
+\item Documento  de viabilidad económica financiera.
+\item Documento de viabilidad técnica / funcional de la implementación de una red IOTA  en este proyecto.
 \item Diagrama esquemático del sistema.
 \item Manual de uso de la aplicación.
 \item Informe de avance. 
@@ -283,37 +321,51 @@ Descripción: En esta sección se deben incluir las historias de usuarios y su p
 
 \section{6. Desglose del trabajo en tareas}
 \label{sec:wbs}
-\begin{consigna}{red}
- En desarrollo.
- \end{consigna}
+
 \begin{enumerate}
 \item Tareas Preliminares
 	\begin{enumerate}
-	\item Planificación del Proyecto (30 hs)
-	\item Análisis de Componentes del Dispositivo IOT ( 30 hs)
-	\end{enumerate}
-	\item Analisis de protocolos de comunicacion (30 hs)
-\item Diseño del Sistema
+	\item Planificación del proyecto (20 hs)
+	\item Análisis de componentes del dispositivo IOT (20 hs)
+	\item Análisis de viabilidad económica financiera (20 hs)
+	\item Análisis de protocolos de comunicación (30 hs)
+	\item Análisis APIs a consumir (20 hs)
+	\item Análisis de stack tecnológico a utilizar (10 hs) 
+	\item Documentación de conclusiones (10 hs) 
+	\end{enumerate}	
+\item Diseño del sistema
 	\begin{enumerate}
-	\item Diseño de Base de Datos (tantas hs)
-	\item Diseño de Servicios a Consumir (tantas hs)
-	\item 
+	\item Diseño de base de datos (10 hs)
+	\item Diseño integración con servicios a consumir (20 hs)
+	\item Diseño de dispositivo IOT (40 hs) 
+	\item Diseño de aplicación (30 hs)
+	\item Diseño de pruebas de testing (10 hs) 
+	\item Documentación de diseño y testing (20 hrs) 	
 	\end{enumerate}
-\item Desarrollo de la aplicación
+\item Desarrollo del sistema 
 	\begin{enumerate}
-	\item Desarrollo  de FrontEnd Usuarios  (tantas hs)
-	\item Desarrollo de FrontEnd Administradores (tantas hs)
-	\item Integración con Servicios en Nube (tantas hs)
+	\item Desarrollo de frontend usuarios  (40 hs)
+	\item Desarrollo de backend operadores (40  hs)
+	\item Integración con servicios en nube (20 hs)
+	\item Desarrollo de aplicación IOT  (40 hs)
+	\item Documentación desarrollos (40 hs)
 	\end{enumerate}
-\item Desarrollo de la aplicacion IOT
+\item Testing
 	\begin{enumerate}
-	\item Desarrollo de Modulo de Lectura RFID
-	\item Desarrollo de Layout de Pantalla
-	\item Tarea 3 (tantas hs)
+	\item Ejecución de pruebas de test (20 hs)
+	\item Documentación de pruebas de test (10 hs)
+	\end{enumerate}
+\item Presentaciones
+	\begin{enumerate}
+	\item Elaboración de informes de avance (20 hs)
+	\item Elaboración de Documento técnico y Funcional de implementación de red IOTA en este proyecto (40 hs)
+	\item Elaboración de memoria de proyecto final (40 hs) 
+	\item Elaboración y preparación de presentación pública  (20 hs)
+	
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
+Cantidad total de horas: (600 h\textbf{s})
 
 
 \section{7. Diagrama de Activity On Node}
