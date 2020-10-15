@@ -72,6 +72,9 @@
 
 
 %---------- LOAD PACKAGES ----------
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{longtable}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{color}
 \usepackage[top=1in,bottom=1in,left=1in,right=1in,vcentering]{geometry}
